@@ -1,0 +1,37 @@
+//=======================================================
+// Colors
+// --------------------------------------------
+// Prefix all color variables with $color-.
+// This makes it easy to figure out what a variable
+// is doing later.
+//
+// Named using tp://chir.ag/projects/name-that-color
+//=======================================================
+
+// Colors (map)
+$color: (
+  gray-dove: rgba(#63666a, 0.3),
+  gray-dove-solid: #d0d1d2,
+  gray-mine-shaft: #63666a,
+  gray-dusty: #999999,
+  gray-concrete: #f2f2f2,
+  blue-curious: #58c5c7,
+  blue-curious-fade: rgba(#58c5c7, 0.3),
+  blue-orient: #5c76a0,
+  blue-orient-fade: rgba(#5c76a0, 0.5),
+  purple-finn: #583a83,
+  white-solid: #ffffff,
+  black-solid: #000000,
+
+  // Admin theme colors.
+  // For use in admin components such as tabs and contextual links.
+  gray-silver: #aaaaaa,
+  gray-westar: #e0e0d8,
+  gray-tundora: #494949,
+
+);
+
+// Shades
+
+// Gradients
+$gradient-primary: linear-gradient(to right, #58c5c7 50%, #583a83 100%);

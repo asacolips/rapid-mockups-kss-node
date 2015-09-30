@@ -1,0 +1,32 @@
+@media print {
+  /* Open Sans - Book */
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local("Open Sans"), url("../assets/fonts/OpenSans/Regular/OpenSans-Regular.woff") format("woff"); }
+  /* Open Sans - Light */
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local("Open Sans Light"), url("../assets/fonts/OpenSans/Light/OpenSans-Light.woff") format("woff"); }
+  /**
+ * Because backgrounds aren't rendered in print stylesheets
+ * unless the user specifically enables that option, this
+ * print stylesheet disables the default background and text
+ * indent, and displays the logo as a content image inside
+ * the link.
+ */
+  .site-logo {
+    background: none;
+    text-indent: 0;
+    width: 257px;
+    height: 68px; }
+    .site-logo:before {
+      content: url("../assets/dist/images/site-logo.svg");
+      display: block;
+      width: 100%;
+      height: auto; } }
+
+/*# sourceMappingURL=maps/styleguide.print.css.map */

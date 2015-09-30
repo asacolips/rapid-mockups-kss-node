@@ -1,0 +1,243 @@
+//=======================================================
+// Typography
+//=======================================================
+html {
+  font-family: $font-stack-base;
+}
+
+// Body Copy
+//
+// Markup:
+// <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in ornare lacus, sit amet rutrum justo. Aliquam at dictum odio, a aliquam ex. Aliquam vitae libero lacinia, vulputate velit in, accumsan ante. In commodo dui a velit tincidunt sodales. Cras ullamcorper purus vitae purus volutpat eleifend. Etiam molestie vehicula libero in dapibus. In vel ipsum in lectus tristique commodo non at metus. Quisque odio enim, rhoncus eu lacus et, sodales laoreet sapien. Suspendisse hendrerit convallis nisl, quis auctor nulla rhoncus at. Fusce venenatis augue odio, eget dapibus ipsum ullamcorper ac. Suspendisse vel porta quam. Mauris non nunc quis enim dictum condimentum. Donec imperdiet luctus est eu finibus. Cras ultricies cursus auctor. In ultrices purus est, in euismod felis feugiat sit amet.</p>
+// <p>Proin at risus quis mauris cursus eleifend. Nulla bibendum in tellus sed pretium. Nam ullamcorper lacus gravida mi tincidunt ultricies eget et risus. Vivamus rutrum ut elit ac malesuada. Sed sagittis malesuada ante, sed blandit tellus dictum vel. Praesent in velit eu est aliquet suscipit. Donec malesuada tortor quis consequat sollicitudin. Vestibulum ut tortor id risus consequat blandit ultricies vitae nisi. Morbi gravida quis lectus sit amet tristique. Pellentesque nulla nulla, faucibus et mi nec, porttitor hendrerit orci. Ut convallis laoreet nulla. Aliquam facilisis nulla vitae sodales suscipit. Integer vitae odio auctor, consequat ipsum vitae, euismod elit.</p>
+//
+// Style guide: base.body-copy
+body {
+  font-size: 1.6rem;
+  font-weight: $font-light;
+  color: color(gray-mine-shaft);
+}
+
+p,
+dt,
+dd {
+  line-height: 1.3;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+// Article styles
+//
+// Markup:
+// <article>
+//   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in ornare lacus, sit amet rutrum justo. Aliquam at dictum odio, a aliquam ex. Aliquam vitae libero lacinia, vulputate velit in, accumsan ante. In commodo dui a velit tincidunt sodales. Cras ullamcorper purus vitae purus volutpat eleifend. Etiam molestie vehicula libero in dapibus. In vel ipsum in lectus tristique commodo non at metus. Quisque odio enim, rhoncus eu lacus et, sodales laoreet sapien. Suspendisse hendrerit convallis nisl, quis auctor nulla rhoncus at. Fusce venenatis augue odio, eget dapibus ipsum ullamcorper ac. Suspendisse vel porta quam. Mauris non nunc quis enim dictum condimentum. Donec imperdiet luctus est eu finibus. Cras ultricies cursus auctor. In ultrices purus est, in euismod felis feugiat sit amet.</p>
+//   <p>Proin at risus quis mauris cursus eleifend. Nulla bibendum in tellus sed pretium. Nam ullamcorper lacus gravida mi tincidunt ultricies eget et risus. Vivamus rutrum ut elit ac malesuada. Sed sagittis malesuada ante, sed blandit tellus dictum vel. Praesent in velit eu est aliquet suscipit. Donec malesuada tortor quis consequat sollicitudin. Vestibulum ut tortor id risus consequat blandit ultricies vitae nisi. Morbi gravida quis lectus sit amet tristique. Pellentesque nulla nulla, faucibus et mi nec, porttitor hendrerit orci. Ut convallis laoreet nulla. Aliquam facilisis nulla vitae sodales suscipit. Integer vitae odio auctor, consequat ipsum vitae, euismod elit.</p>
+// </article>
+//
+// Style guide: base.article-styles
+article {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  font-weight: $font-light;
+}
+
+// Links
+//
+// Markup:
+// <a href="#">Normal link</a><br>
+// <a href="#" class="focus">Hover/Focus Link</a><br>
+// <a href="#" class="active">Active Link</a>
+//
+// Style guide: base.links
+a {
+  color: color(blue-curious);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  // Improve readability when focused and also mouse hovered in all browsers.
+  &:hover,
+  &:focus,
+  &.focus,
+  &.active,
+  &:active {
+    color: color(blue-orient);
+    outline: 0;
+  }
+}
+
+// Active links should only be given borders in certain contexts
+article,
+aside {
+  @include active-link-border;
+}
+
+b,
+strong {
+  //font-weight: $base-font-bold;
+}
+
+// Block Quote
+//
+// Normal heading styles with no classes applied.
+//
+// Markup:
+// <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in ornare lacus, sit amet rutrum justo. Aliquam at dictum odio, a aliquam ex. Aliquam vitae libero lacinia, vulputate velit in, accumsan ante. In commodo dui a velit tincidunt sodales. Cras ullamcorper purus vitae purus volutpat eleifend.</blockquote>
+//
+// Style guide: base.block-quote
+blockquote {
+  display: block;
+  background: color(blue-curious);
+  color: color(white-solid);
+  padding: 3rem;
+  margin: $gutter 0;
+  font-family: $font-stack-base;
+  font-size: 4.4rem;
+  line-height: 1.18;
+  font-weight: $font-book;
+  font-style: italic;
+}
+
+dfn {
+  font-style: italic;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+// Address inconsistent and variable font size in all browsers.
+small {
+  font-size: 80%;
+}
+
+// Prevent `sub` and `sup` affecting `line-height` in all browsers.
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+// Contain overflow in all browsers.
+pre {
+  margin: 0;
+  overflow: auto;
+}
+
+// Address odd `em`-unit font size rendering in all browsers.
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1rem;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+// Heading styles
+//
+// Normal heading styles with no classes applied.
+//
+// Markup:
+// <h1>Test heading with no classes applied.</h1>
+// <h2>Test heading with no classes applied.</h2>
+// <h3>Test heading with no classes applied.</h3>
+// <h4>Test heading with no classes applied.</h4>
+// <h5>Test heading with no classes applied.</h5>
+// <h6>Test heading with no classes applied.</h6>
+//
+// Style guide: base.heading-styles
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.15;
+  margin: 0 0 10px;
+  text-rendering: geometricPrecision;
+  color: color(gray-mine-shaft);
+}
+
+h1 {
+  font-family: $font-stack-secondary;
+  font-size: 2.2rem;
+  font-weight: $font-light;
+  color: color(blue-orient);
+
+  @include breakpoint ($bp-sm) {
+    font-size: 3.2rem;
+  }
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: $font-light;
+
+  @include breakpoint ($bp-sm) {
+    font-size: 2.6rem;
+  }
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: $font-light;
+
+  @include breakpoint ($bp-sm) {
+    font-size: 2.0rem;
+  }
+}
+
+h4 {
+  font-size: 1.4rem;
+
+  @include breakpoint ($bp-sm) {
+    font-size: 1.8rem;
+  }
+}
+
+h5 {
+  font-size: 1.2rem;
+
+  @include breakpoint ($bp-sm) {
+    font-size: 1.6rem;
+  }
+}
+
+h6 {
+  font-size: 1.2rem;
+
+  @include breakpoint ($bp-sm) {
+    font-size: 1.4rem;
+  }
+}
+
+.page-header {
+  margin-bottom: 0;
+}
+
+.callout {
+  font-size: 1.2rem;
+  font-weight: $font-light;
+  color: color(gray-mine-shaft);
+}
+
+.caption {
+  font-size: 1.3rem;
+  line-height: 1;
+  font-style: italic;
+  color: color(blue-curious);
+}

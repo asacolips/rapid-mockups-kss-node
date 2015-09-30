@@ -1,0 +1,20 @@
+/**
+ * Because backgrounds aren't rendered in print stylesheets
+ * unless the user specifically enables that option, this
+ * print stylesheet disables the default background and text
+ * indent, and displays the logo as a content image inside
+ * the link.
+ */
+.site-logo {
+  background: none;
+  text-indent: 0;
+  width: 257px;
+  height: 68px;
+
+  &:before {
+    content: url('#{$asset-path}/images/site-logo.svg');
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

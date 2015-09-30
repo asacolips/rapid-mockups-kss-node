@@ -1,0 +1,54 @@
+@include add-grid(12);
+@include add-gutter($gutter);
+
+.l-content-sidebar, {
+  @include clearfix;
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @include breakpoint ($bp-sm) {
+    display: block;
+  }
+
+  .l-content {
+    @include grid-span(12,1);
+    order: 0;
+    margin-bottom: 2.5rem;
+    padding: 0 $padding-sm;
+
+    @include breakpoint ($bp-sm) {
+      @include grid-span(8,1);
+      padding-left: $padding-sm;
+    }
+
+    @include breakpoint ($bp-md) {
+      padding-left: $padding-lg;
+    }
+
+    @include breakpoint ($bp-lg) {
+      @include grid-span(6,1);
+      padding-left: $padding-lg;
+    }
+  }
+
+  .l-sidebar {
+    @include grid-span(12,1);
+    order: 2;
+
+    @include breakpoint ($bp-sm) {
+      @include grid-span(4,9);
+      padding-right: $padding-sm;
+    }
+
+    @include breakpoint ($bp-md) {
+      padding-right: $padding-lg;
+    }
+
+    @include breakpoint ($bp-lg) {
+      @include grid-span(6,7);
+      padding-right: $padding-lg;
+    }
+  }
+}

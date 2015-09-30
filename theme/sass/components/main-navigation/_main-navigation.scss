@@ -1,0 +1,207 @@
+// Main Navigation
+//
+// Markup: components.main-navigation.hbs
+//
+// Style guide: components.main-navigation
+
+.main-navigation {
+  /* mobile styles */
+  transition: all ease-in-out 0.25s;
+  overflow: hidden;
+  order: 3;
+  width: 100%;
+  margin-top: 2rem;
+  @include clearfix;
+
+  @include breakpoint ($bp-sm) {
+    order: 0;
+    width: auto;
+    margin-top: 0;
+    overflow: visible;
+    text-align: right;
+  }
+
+  .js & {
+    max-height: 0;
+    /* ignore closed status on desktop */
+    @include breakpoint ($bp-sm) {
+      max-height: 35rem;
+      margin: 0;
+    }
+
+    /* menu toggle on mobile */
+    &.active {
+      max-height: 35rem;
+    }
+  }
+
+  a {
+    margin-left: 0;
+  }
+}
+
+.main-navigation__menu {
+  padding: 0;
+  margin: 0;
+}
+
+.main-navigation__link {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  margin: 0.4rem 0 0;
+  position: relative;
+
+  @include breakpoint ($bp-sm) {
+    display: inline-block;
+    width: auto;
+    padding: 0;
+    margin: 0 1rem;
+    overflow: visible;
+  }
+
+  &.active-trail > a {
+    color: color(white-solid);
+    background-color: color(blue-orient);
+    border-color: color(blue-orient);
+
+    @include breakpoint ($bp-sm) {
+      color: color(blue-orient);
+      background-color: transparent;
+      border-color: color(blue-orient);
+    }
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    background: color(blue-curious);
+    color: color(white-solid);
+    transition: all ease-in-out 0.25s;
+
+    @include breakpoint ($bp-sm) {
+      white-space: nowrap;
+      width: 100%;
+      padding: 0;
+      border-bottom: 2px solid color(white-solid);
+      background: transparent;
+      color: color(blue-curious);
+    }
+
+    &:hover {
+      background-color: color(blue-orient);
+      color: color(white-solid);
+
+      @include breakpoint ($bp-sm) {
+        background-color: transparent;
+        color: color(blue-orient);
+      }
+    }
+
+    &:focus,
+    &:active {
+      border-color: color(blue-orient);
+      background-color: color(blue-orient);
+      color: color(white-solid);
+
+      @include breakpoint ($bp-sm) {
+        background-color: transparent;
+        color: color(blue-orient);
+        border-color: color(blue-orient);
+      }
+    }
+  }
+
+  /* Desktop sub-menu styling */
+  .menu {
+    padding-left: 0;
+    margin: 0;
+
+    @include breakpoint ($bp-sm) {
+      position: absolute;
+      right: -9999px;
+      top: -9999px;
+      z-index: 90;
+      text-align: right;
+      padding: $gutter;
+      background: rgba(color(white-solid), 0.9);
+    }
+  }
+
+  .main-navigation__link {
+    @include breakpoint ($bp-sm) {
+      border-left: none;
+      margin: 0;
+    }
+
+    a {
+      padding-left: 4rem;
+      font-size: 1.4rem;
+
+      @include breakpoint ($bp-sm) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &:hover {
+    .menu {
+      right: -8px;
+      top: 100%;
+    }
+  }
+}
+
+.menu-toggle {
+  margin-left: 2rem;
+  order: 2;
+
+  /* Hide if js is not enabled */
+  display: none;
+  visibility: hidden;
+
+  .js & {
+    display: block;
+    visibility: visible;
+
+    /* desktop doesn't use a menu button */
+    @include breakpoint ($bp-sm) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}
+
+.menu-toggle--button {
+  display: block;
+  position: relative;
+  width: 36px;
+  height: 32px;
+  background: transparent;
+  @include image-replace;
+
+  &:link,
+  &:active,
+  &:focus,
+  &:hover {
+    border: none;
+    background: none;
+  }
+
+  /* hamburger icon, border method */
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 25px;
+    border-top: 15px double color(blue-curious);
+    border-bottom: 5px solid color(blue-curious);
+  }
+}

@@ -1,0 +1,69 @@
+// Tables
+//
+// Default styling for tables. Tables have a max-width
+// set to 100%, allowing them to scroll horizontally
+// on mobile and tablet, or in any situation where the
+// table content is too wide for the page.
+//
+// Markup:
+// <table>
+//   <tr>
+//     <th>Entry Header 1</th>
+//     <th>Entry Header 2</th>
+//     <th>Entry Header 3</th>
+//     <th>Entry Header 4</th>
+//     <th>Entry Header 5</th>
+//     <th>Entry Header 6</th>
+//   </tr>
+//   <tr>
+//     <td>Entry First Line 1</td>
+//     <td>Entry First Line 2</td>
+//     <td>Entry First Line 3</td>
+//     <td>Entry First Line 4</td>
+//     <td>Entry First Line 5</td>
+//     <td>Entry First Line 6</td>
+//   </tr>
+//   <tr>
+//     <td>Entry Line 1</td>
+//     <td>Entry Line 2</td>
+//     <td>Entry Line 3</td>
+//     <td>Entry Line 4</td>
+//     <td>Entry Line 5</td>
+//     <td>Entry Line 6</td>
+//   </tr>
+//   <tr>
+//     <td>Entry Last Line 1</td>
+//     <td>Entry Last Line 2</td>
+//     <td>Entry Last Line 3</td>
+//     <td>Entry Last Line 4</td>
+//     <td>Entry Last Line 5</td>
+//     <td>Entry Last Line 6</td>
+//   </tr>
+// </table>
+//
+// Style guide: base.tables
+
+// Remove most spacing between table cells.
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  font-size: 1.4rem;
+
+  @include breakpoint ($bp-sm) {
+    font-size: 1.6rem;
+  }
+}
+
+td,
+th {
+  padding: 0.5rem 1rem;
+  border: 0;
+}
+
+th {
+  border-bottom: 1px solid color(gray-dove-solid);
+}
+

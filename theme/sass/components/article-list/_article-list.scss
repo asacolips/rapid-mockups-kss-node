@@ -1,0 +1,28 @@
+// Article List
+//
+// Markup: components.article-list.hbs
+//
+// Style guide: components.article-list
+
+.article-list__article {
+  @include clearfix;
+  margin-bottom: 2rem;
+}
+
+/* Using px instead of rem so that margin on article
+ * body will be identical regardless of root size.
+ */
+.article-list__picture {
+  float: left;
+  margin-right: 20px;
+}
+
+/* thumbnail = 100px, margin = 20px */
+.article-list__body {
+  margin-left: 120px
+}
+
+.article-list__title {
+  font-size: 2rem;
+  line-height: 2.2rem;
+}
