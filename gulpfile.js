@@ -73,6 +73,14 @@ gulp.task('javascript', function() {
 });
 
 //=======================================================
+// Copy assets to styleguide
+//=======================================================
+gulp.task('copy', function() {
+  return gulp.src('assets/fonts/**/*')
+    .pipe(gulp.dest('styleguide/dist/theme/assets/fonts'));
+})
+
+//=======================================================
 // Watch and recompile sass.
 //=======================================================
 
@@ -107,13 +115,12 @@ gulp.task('styleguide-all', function() {
     .pipe(shell([
       // This basically runs the below command on the command line:
       // kss-node [source files to parse] [destination folder] --template [location of template files] --css [location of css to include]
-      'kss-node --source <%= source %> --destination <%= destination(file.path) %> --template <%= template(file.path) %> --helpers <%= helpers %> --js <%= javascript %>'
+      'kss-node --source <%= source %> --destination <%= destination(file.path) %> --template <%= template(file.path) %> --helpers <%= helpers %>'
     ], {
       templateData: {
         source: 'sass',
         helpers: 'styleguide/helpers',
-        // have move up from the styleguide/dist/*/ directory
-        javascript: '/theme/js/dist/all.js',
+        // move up from the styleguide/dist/*/ directory
         template: function (s) {
           return s.replace('/index.html', '');
         },
@@ -130,14 +137,13 @@ gulp.task('styleguide-all', function() {
 gulp.task('styleguide-kss', shell.task([
   // This basically runs the bellow command on the command line:
   // kss-node [source files to parse] [destination folder] --template [location of template files] --css [location of css to include]
-    'kss-node --source <%= source %> --destination <%= destination %> --template <%= template %> --helpers <%= helpers %> --js <%= javascript %>'
+    'kss-node --source <%= source %> --destination <%= destination %> --template <%= template %> --helpers <%= helpers %>'
   ], {
     templateData: {
       source: 'sass',
       destination: 'styleguide/dist',
       template: 'styleguide/kss-overview',
-      helpers: 'styleguide/helpers',
-      javascript: '/theme/js/dist/all.js'
+      helpers: 'styleguide/helpers'
     }
   }
 ));
@@ -182,7 +188,7 @@ gulp.task('browser-sync', function() {
   sync.init({
     server: {
       baseDir: "./styleguide/dist/",
-      index: "index.html"
+      index: "index.html",
     }
   });
 

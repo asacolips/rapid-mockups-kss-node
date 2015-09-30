@@ -6,8 +6,10 @@
     <title>Styleguide Style Guide</title>
     <meta name="description" content="" />
     <meta name="generator" content="kss-node" />
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="public/kss.css" />
-    <link rel="stylesheet" href="/theme/css/styleguide.main.css" />
+    <link rel="stylesheet" href="theme/css/styleguide.main.css" />
+    <link rel="stylesheet" href="theme/css/styleguide.print.css" />
     <!--[if lt IE 9]>
     <script src="public/html5shiv.js"></script>
     <![endif]-->
@@ -52,31 +54,12 @@
 <p>This application is a living style guide, generated from KSS documented styles.</p>
 <h2 id="pages">Pages</h2>
 <ul>
-<li><a href="/">Main Style Guide</a></li>
-<li><a href="/basic/">Basic Page</a></li>
-<li><a href="/news/">News Page</a></li>
+<li><a href="#">Main Style Guide</a></li>
+<li><a href="basic">Basic Page</a></li>
+<li><a href="news">News Page</a></li>
 </ul>
-<h2 id="getting-started-with-gulp">Getting started with Gulp</h2>
-<p>Grab NVM to make sure you&#39;re using the right version of NodeJS.</p>
-<pre><code>nvm use
-</code></pre><p>Next install all gulp dependencies declared in the package.json file. From the theme directory run:</p>
-<pre><code>npm install
-</code></pre><p>Sweet. Gulp should be ready to go. Let&#39;s make it do work. Here&#39;s a list of the available gulp commands.</p>
-<ul>
-<li><h3 id="gulp">gulp</h3>
-<p>Compiles Sass and regenerates the style guide using KSS Node.</p>
-<pre><code>npm run gulp
-</code></pre></li>
-<li><h3 id="gulp-styleguide">gulp-styleguide</h3>
-<p>Regenerates the styleguide <em>without</em> recompiling Sass.</p>
-<pre><code>npm run gulp-styleguide
-</code></pre></li>
-<li><h3 id="gulp-watch">gulp-watch</h3>
-<p>Watches Sass files in current theme directory. When a file is changed Sass will be recompiled.
-Also uses <a href="http://www.browsersync.io/">browser-sync</a> for hot pushing css updates.</p>
-<pre><code>npm run gulp-watch
-</code></pre></li>
-</ul>
+<h2 id="view-the-repository">View the repository</h2>
+<p><a href="https://github.com/asacolips/rapid-mockups-kss-node/tree/master/styleguide/dist/basic">https://github.com/asacolips/rapid-mockups-kss-node/tree/master/styleguide/dist/basic</a></p>
 
           </section>
         </article>
@@ -87,8 +70,7 @@ Also uses <a href="http://www.browsersync.io/">browser-sync</a> for hot pushing 
     </div>
     <script src="public/kss.js"></script>
     <script src="public/jquery-1.9.1.min.js"></script>
-    <script src="/theme/js/dist/all.js"></script>
-
+    <script src="theme/js/dist/all.js"></script>
     <!--[if gt IE 8]><!-->
     <script src="public/rainbow.min.js"></script>
     <!--<![endif]-->
