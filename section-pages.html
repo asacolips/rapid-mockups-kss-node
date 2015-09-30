@@ -6,8 +6,10 @@
     <title>Styleguide Style Guide</title>
     <meta name="description" content="" />
     <meta name="generator" content="kss-node" />
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="public/kss.css" />
-    <link rel="stylesheet" href="/rapid-mockups-kss-node/theme/css/styleguide.main.css" />
+    <link rel="stylesheet" href="theme/css/styleguide.main.css" />
+    <link rel="stylesheet" href="theme/css/styleguide.print.css" />
     <!--[if lt IE 9]>
     <script src="public/html5shiv.js"></script>
     <![endif]-->
@@ -18,7 +20,7 @@
         <div class="kss-sidebar-inner">
           <header class="kss-header">
             <div class="site-logo">
-              <a href="/rapid-mockups-kss-node/" rel="home" class="site-logo__link active">Styleguide</a>
+              <a href="/" rel="home" class="site-logo__link active">Styleguide</a>
             </div>          </header>
           <nav class="kss-nav">
             <ul class="kss-menu" data-kss-ref="pages">
@@ -39,7 +41,9 @@
                   <a href="section-pages.html"><span class="kss-ref">5</span><span class="kss-name">Pages</span></a>
                     <ul class="kss-menu-child">
                           <li class="kss-menu-item"><a href="#section-pages.basic-page"><span class="kss-ref">5.1</span><span class="kss-name">Basic Page</span></a></li>
-                          <li class="kss-menu-item"><a href="#section-pages.news-page"><span class="kss-ref">5.2</span><span class="kss-name">News Page</span></a></li>
+                          <li class="kss-menu-item"><a href="#section-pages.includes-css"><span class="kss-ref">5.2</span><span class="kss-name">Includes - CSS</span></a></li>
+                          <li class="kss-menu-item"><a href="#section-pages.includes-js"><span class="kss-ref">5.3</span><span class="kss-name">Includes - JS</span></a></li>
+                          <li class="kss-menu-item"><a href="#section-pages.news-page"><span class="kss-ref">5.4</span><span class="kss-name">News Page</span></a></li>
                     </ul>
                 </li>
                 <li class="kss-menu-item">
@@ -62,7 +66,7 @@ in these sections, only markup.</p>
           <section id="section-pages.basic-page" class="kss-section kss-depth-2">
             <h1 class="kss-title"><a href="#section-pages.basic-page"><span class="kss-ref">5.1</span></a> Basic Page</h1>
             <div class="kss-description">
-              <p><a href="/rapid-mockups-kss-node/basic/">View full page</a></p>
+              <p><a href="/basic/">View full page</a></p>
 
             </div>
             <div class="kss-modifier-block">
@@ -108,10 +112,54 @@ in these sections, only markup.</p>
               </div>
             </div>
           </section>
-          <section id="section-pages.news-page" class="kss-section kss-depth-2">
-            <h1 class="kss-title"><a href="#section-pages.news-page"><span class="kss-ref">5.2</span></a> News Page</h1>
+          <section id="section-pages.includes-css" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><a href="#section-pages.includes-css"><span class="kss-ref">5.2</span></a> Includes - CSS</h1>
             <div class="kss-description">
-              <p><a href="/rapid-mockups-kss-node/news/">View full page</a></p>
+              <p>Define css files included in kss-node templates.
+{{&gt; pages.includes-css}} = normal usage
+{{&gt; pages.includes-css interior_page=&#39;true&#39;}} = variant for interior pages</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <link rel="stylesheet" href="theme/css/styleguide.main.css" />
+<link rel="stylesheet" href="theme/css/styleguide.print.css" />
+
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;theme/css/styleguide.main.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;theme/css/styleguide.print.css&quot; /&gt;
+</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-pages.includes-js" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><a href="#section-pages.includes-js"><span class="kss-ref">5.3</span></a> Includes - JS</h1>
+            <div class="kss-description">
+              <p>Define js files included in kss-node templates.
+{{&gt; pages.includes-js}} = normal usage
+{{&gt; pages.includes-js interior_page=&#39;true&#39;}} = variant for interior pages</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <script src="theme/js/dist/all.js"></script>
+
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;script src=&quot;theme/js/dist/all.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-pages.news-page" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><a href="#section-pages.news-page"><span class="kss-ref">5.4</span></a> News Page</h1>
+            <div class="kss-description">
+              <p><a href="/news/">View full page</a></p>
 
             </div>
             <div class="kss-modifier-block">
@@ -133,7 +181,7 @@ in these sections, only markup.</p>
           <div class="article-list__meta">June 7, 2015 | Location for events</div>
         </div>
       </article>
-
+    
       <article class="article-list__article">
         <div class="article-list__picture">
           <div class="picture__image article-list__image thumbnail-image"><picture><source srcset="http://placehold.it/100x100" media="(min-width: 768px)"><img src="http://placehold.it/100x100" ></picture></div>
@@ -144,7 +192,7 @@ in these sections, only markup.</p>
           <p class="article-list__summary">Example of where a brief description would appear only if available and selected for inclusion as a summary</p>
         </div>
       </article>
-
+    
       <article class="article-list__article">
         <div class="article-list__picture">
           <div class="picture__image article-list__image thumbnail-image"><picture><source srcset="http://placehold.it/100x100" media="(min-width: 768px)"><img src="http://placehold.it/100x100" ></picture></div>
@@ -155,7 +203,7 @@ in these sections, only markup.</p>
           <p class="article-list__summary">Example of a long title with brief description to show spacing when text spands longer than the image height</p>
         </div>
       </article>
-
+    
       <article class="article-list__article">
         <div class="article-list__picture">
           <div class="picture__image article-list__image thumbnail-image"><picture><source srcset="http://placehold.it/100x100" media="(min-width: 768px)"><img src="http://placehold.it/100x100" ></picture></div>
@@ -165,7 +213,7 @@ in these sections, only markup.</p>
           <div class="article-list__meta">June 4, 2015</div>
         </div>
       </article>
-
+    
       <article class="article-list__article">
         <div class="article-list__picture">
           <div class="picture__image article-list__image thumbnail-image"><picture><source srcset="http://placehold.it/100x100" media="(min-width: 768px)"><img src="http://placehold.it/100x100" ></picture></div>
@@ -175,7 +223,7 @@ in these sections, only markup.</p>
           <div class="article-list__meta">June 7, 2015 | Location for events</div>
         </div>
       </article>
-
+    
       <article class="article-list__article">
         <div class="article-list__picture">
           <div class="picture__image article-list__image thumbnail-image"><picture><source srcset="http://placehold.it/100x100" media="(min-width: 768px)"><img src="http://placehold.it/100x100" ></picture></div>
@@ -186,7 +234,7 @@ in these sections, only markup.</p>
           <p class="article-list__summary">Example of where a brief description would appear only if available and selected for inclusion as a summary</p>
         </div>
       </article>
-
+    
       <article class="article-list__article">
         <div class="article-list__picture">
           <div class="picture__image article-list__image thumbnail-image"><picture><source srcset="http://placehold.it/100x100" media="(min-width: 768px)"><img src="http://placehold.it/100x100" ></picture></div>
@@ -224,7 +272,7 @@ in these sections, only markup.</p>
           &lt;div class=&quot;article-list__meta&quot;&gt;June 7, 2015 | Location for events&lt;/div&gt;
         &lt;/div&gt;
       &lt;/article&gt;
-
+    
       &lt;article class=&quot;article-list__article&quot;&gt;
         &lt;div class=&quot;article-list__picture&quot;&gt;
           &lt;div class=&quot;picture__image article-list__image thumbnail-image&quot;&gt;&lt;picture&gt;&lt;source srcset=&quot;http://placehold.it/100x100&quot; media=&quot;(min-width: 768px)&quot;&gt;&lt;img src=&quot;http://placehold.it/100x100&quot; &gt;&lt;/picture&gt;&lt;/div&gt;
@@ -235,7 +283,7 @@ in these sections, only markup.</p>
           &lt;p class=&quot;article-list__summary&quot;&gt;Example of where a brief description would appear only if available and selected for inclusion as a summary&lt;/p&gt;
         &lt;/div&gt;
       &lt;/article&gt;
-
+    
       &lt;article class=&quot;article-list__article&quot;&gt;
         &lt;div class=&quot;article-list__picture&quot;&gt;
           &lt;div class=&quot;picture__image article-list__image thumbnail-image&quot;&gt;&lt;picture&gt;&lt;source srcset=&quot;http://placehold.it/100x100&quot; media=&quot;(min-width: 768px)&quot;&gt;&lt;img src=&quot;http://placehold.it/100x100&quot; &gt;&lt;/picture&gt;&lt;/div&gt;
@@ -246,7 +294,7 @@ in these sections, only markup.</p>
           &lt;p class=&quot;article-list__summary&quot;&gt;Example of a long title with brief description to show spacing when text spands longer than the image height&lt;/p&gt;
         &lt;/div&gt;
       &lt;/article&gt;
-
+    
       &lt;article class=&quot;article-list__article&quot;&gt;
         &lt;div class=&quot;article-list__picture&quot;&gt;
           &lt;div class=&quot;picture__image article-list__image thumbnail-image&quot;&gt;&lt;picture&gt;&lt;source srcset=&quot;http://placehold.it/100x100&quot; media=&quot;(min-width: 768px)&quot;&gt;&lt;img src=&quot;http://placehold.it/100x100&quot; &gt;&lt;/picture&gt;&lt;/div&gt;
@@ -256,7 +304,7 @@ in these sections, only markup.</p>
           &lt;div class=&quot;article-list__meta&quot;&gt;June 4, 2015&lt;/div&gt;
         &lt;/div&gt;
       &lt;/article&gt;
-
+    
       &lt;article class=&quot;article-list__article&quot;&gt;
         &lt;div class=&quot;article-list__picture&quot;&gt;
           &lt;div class=&quot;picture__image article-list__image thumbnail-image&quot;&gt;&lt;picture&gt;&lt;source srcset=&quot;http://placehold.it/100x100&quot; media=&quot;(min-width: 768px)&quot;&gt;&lt;img src=&quot;http://placehold.it/100x100&quot; &gt;&lt;/picture&gt;&lt;/div&gt;
@@ -266,7 +314,7 @@ in these sections, only markup.</p>
           &lt;div class=&quot;article-list__meta&quot;&gt;June 7, 2015 | Location for events&lt;/div&gt;
         &lt;/div&gt;
       &lt;/article&gt;
-
+    
       &lt;article class=&quot;article-list__article&quot;&gt;
         &lt;div class=&quot;article-list__picture&quot;&gt;
           &lt;div class=&quot;picture__image article-list__image thumbnail-image&quot;&gt;&lt;picture&gt;&lt;source srcset=&quot;http://placehold.it/100x100&quot; media=&quot;(min-width: 768px)&quot;&gt;&lt;img src=&quot;http://placehold.it/100x100&quot; &gt;&lt;/picture&gt;&lt;/div&gt;
@@ -277,7 +325,7 @@ in these sections, only markup.</p>
           &lt;p class=&quot;article-list__summary&quot;&gt;Example of where a brief description would appear only if available and selected for inclusion as a summary&lt;/p&gt;
         &lt;/div&gt;
       &lt;/article&gt;
-
+    
       &lt;article class=&quot;article-list__article&quot;&gt;
         &lt;div class=&quot;article-list__picture&quot;&gt;
           &lt;div class=&quot;picture__image article-list__image thumbnail-image&quot;&gt;&lt;picture&gt;&lt;source srcset=&quot;http://placehold.it/100x100&quot; media=&quot;(min-width: 768px)&quot;&gt;&lt;img src=&quot;http://placehold.it/100x100&quot; &gt;&lt;/picture&gt;&lt;/div&gt;
@@ -307,8 +355,7 @@ in these sections, only markup.</p>
     </div>
     <script src="public/kss.js"></script>
     <script src="public/jquery-1.9.1.min.js"></script>
-    <script src="/rapid-mockups-kss-node/theme/js/dist/all.js"></script>
-
+    <script src="theme/js/dist/all.js"></script>
     <!--[if gt IE 8]><!-->
     <script src="public/rainbow.min.js"></script>
     <!--<![endif]-->
