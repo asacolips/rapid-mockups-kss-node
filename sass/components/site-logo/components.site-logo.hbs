@@ -1,3 +1,7 @@
 <div class="site-logo">
-  <a href="/" rel="home" class="site-logo__link active">Styleguide</a>
+  {{#if home_page}}
+  <a href="#" rel="home" class="site-logo__link active">Styleguide</a>
+  {{else}}
+  <a href="../" rel="home" class="site-logo__link active">Styleguide</a>
+  {{/if}}
 </div>

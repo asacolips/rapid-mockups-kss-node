@@ -8,7 +8,7 @@
     <meta name="generator" content="kss-node" />
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="public/kss.css" />
-    {{> pages.includes-css}}
+    {{> pages.includes-css home_page="true"}}
     <!--[if lt IE 9]>
     <script src="public/html5shiv.js"></script>
     <![endif]-->
@@ -18,7 +18,7 @@
       <div class="kss-sidebar">
         <div class="kss-sidebar-inner">
           <header class="kss-header">
-            {{> components.site-logo}}
+            {{> components.site-logo home_page="true"}}
           </header>
           <nav class="kss-nav">
             <ul class="kss-menu" data-kss-ref="{{rootName}}">
@@ -99,7 +99,7 @@
     </div>
     <script src="public/kss.js"></script>
     <script src="public/jquery-1.9.1.min.js"></script>
-    {{> pages.includes-js}}
+    {{> pages.includes-js home_page="true"}}
     <!--[if gt IE 8]><!-->
     <script src="public/rainbow.min.js"></script>
     <!--<![endif]-->
