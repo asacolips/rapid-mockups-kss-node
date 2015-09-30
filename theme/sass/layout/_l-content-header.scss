@@ -1,7 +1,0 @@
-@include add-grid(12);
-
-.l-content-header {
-  @extend %l-center;
-  @include clearfix;
-  margin-bottom: $padding-sm;
-}
