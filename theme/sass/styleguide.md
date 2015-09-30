@@ -3,9 +3,9 @@
 This application is a living style guide, generated from KSS documented styles.
 
 ## Pages
-- [Main Style Guide](/styleguide/dist/default/)
-- [Basic Page](/styleguide/dist/basic/)
-- [News Page](/styleguide/dist/news/)
+- [Main Style Guide](/rapid-mockups-kss-node/default/)
+- [Basic Page](/rapid-mockups-kss-node/basic/)
+- [News Page](/rapid-mockups-kss-node/news/)
 
 ## Getting started with Gulp
 

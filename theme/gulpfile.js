@@ -116,7 +116,7 @@ gulp.task('styleguide', function() {
           return s.replace('/index.html', '');
         },
         destination: function (s) {
-          return s.replace('/styleguide/templates/', '/styleguide/dist/').replace('/index.html', '');
+          return s.replace('/styleguide/templates/', '/rapid-mockups-kss-node/').replace('/index.html', '');
         }
       }
     }))
