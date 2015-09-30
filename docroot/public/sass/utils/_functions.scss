@@ -1,0 +1,39 @@
+//=======================================================
+// Functions
+//=======================================================
+
+// Function to return a value from a map based on a key.
+@function get-var($key, $map) {
+  @if map-has-key($map, $key) {
+    @return map-get($map, $key);
+  }
+
+  @warn 'Unknown `#{$key}` in map. Try "@include print($map);" to see what\'s available.';
+  @return null;
+}
+
+// color function
+@function color($key) {
+  @if map-has-key($color, $key) {
+    @return map-get($color, $key);
+  }
+
+  @warn "This `#{$key}` is not in the $color map.";
+  @return null;
+}
+
+// Replace `$search` with `$replace` in `$string`
+// @author Hugo Giraudel
+// @param {String} $string - Initial string
+// @param {String} $search - Substring to replace
+// @param {String} $replace ('') - New value
+// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}

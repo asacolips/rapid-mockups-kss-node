@@ -1,0 +1,14 @@
+// Page - Sidebar
+//
+// Sample page sidebar
+//
+// Markup: components.page-sidebar.hbs
+//
+// Style guide: components.page-sidebar
+
+.sidebar__block {
+  background: color(blue-curious);
+  color: color(white-solid);
+  padding: $padding-sm;
+  margin-bottom: $padding-sm;
+}
