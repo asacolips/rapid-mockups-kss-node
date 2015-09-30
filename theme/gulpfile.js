@@ -111,7 +111,7 @@ gulp.task('styleguide', function() {
         source: 'sass',
         helpers: 'styleguide/helpers',
         // have move up from the styleguide/dist/*/ directory
-        javascript: '/theme/js/dist/all.js',
+        javascript: '/rapid-mockups-kss-node/theme/js/dist/all.js',
         template: function (s) {
           return s.replace('/index.html', '');
         },

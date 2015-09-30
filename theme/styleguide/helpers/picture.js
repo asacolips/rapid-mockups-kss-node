@@ -58,8 +58,8 @@ module.exports.register = function(handlebars) {
 
     // use custom filename if it exists
     if (filename) {
-      html += '<source srcset="/theme/assets/dist/images/' + filename + '--lg.' + type + '" media="(min-width: 768px)">';
-      html += '<img src="/theme/assets/dist/images/' + filename + '--sm.' + type + '"' + alt + '>';
+      html += '<source srcset="/rapid-mockups-kss-node/theme/assets/dist/images/' + filename + '--lg.' + type + '" media="(min-width: 768px)">';
+      html += '<img src="/rapid-mockups-kss-node/theme/assets/dist/images/' + filename + '--sm.' + type + '"' + alt + '>';
     }
     // placehold.it fallback if there's no filename
     else {
