@@ -3,7 +3,7 @@
 This application is a living style guide, generated from KSS documented styles.
 
 ## Pages
-- [Main Style Guide](/rapid-mockups-kss-node/default/)
+- [Main Style Guide](/rapid-mockups-kss-node/)
 - [Basic Page](/rapid-mockups-kss-node/basic/)
 - [News Page](/rapid-mockups-kss-node/news/)
 

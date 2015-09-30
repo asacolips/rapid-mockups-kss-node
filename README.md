@@ -9,5 +9,5 @@ Styleguide - HTML Mockups with kss-node
 - `npm run gulp`
 - `npm run gulp styleguide`
 - `npm run gulp compress`
-- go to http://styleguide.dev/rapid-mockups-kss-node/default/index.html to view the generated style guide
+- go to http://styleguide.dev/rapid-mockups-kss-node/index.html to view the generated style guide
 - go to http://styleguide.dev/rapid-mockups-kss-node/basic/index.html to view the compiled basic HTML page mockup
