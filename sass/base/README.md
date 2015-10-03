@@ -1,0 +1,1 @@
+This directory sould be used for base HTML styles. You generally should avoid styling classes in this section, unless there's a good reason (such as styling a `.button` alongside a `button`).

@@ -49,7 +49,7 @@ Second, your style sheets define your component so that kss knows about it and h
 // Style guide: components.site-logo
 ```
 
-The magic that happens here are in the last two parts of the comment:  the markup and style guide sections. If you name your component markup files (the `.hbs` files mentioned earlier) with the same naming scheme as your style guide component, you can then render those components in other handlebars templates. We'll take a look at how to do that below in the *pages* section.
+If you name your component markup files (the `.hbs` files mentioned earlier) with the same naming scheme as your style guide component, you can then render those components in other handlebars templates. We'll take a look at how to do that below in the *pages* section.
 
 #### Handlebars markup
 
@@ -69,62 +69,9 @@ Using a markup file is optional. If you have an extremely short piece of markup,
 // Markup: <a href="#" class="js-back-to-top back-to-top">Back to top</a>
 ```
 
-rather than using something like:
+### How to make new style guide pages
 
-```
-// Markup: components.back-to-top.hbs
-```
-
-### sass/pages
-
-Mockup pages built using kss-node will have two parts. One will be to define a template file so that kss-node will find it render it out when gulp is run, and that's described in the section below this. The second part is the one we're looking at now, which is defining new 'pages' in our `sass` directory.
-
-Having pages defined in our sass directory helps by allowing us to make page specific scss overrides if needed, and we can customize our handlebars markup. These pages can be thought of as the as the primary content/sidebar sections of your mockup web pages, excluding the header/footer (which are rendered in the style guide index pages).
-
-Each page should be structured like a component. For example:
-
-**Structure**
-
-```
-  __ pages
-  |___ basic-page
-    |___ _basic-page.scss
-    |___ pages.basic-page.hbs
-  |___ news-page
-    |___ _news-page.scss
-    |___ pages.news-page.hbs
-```
-
-**Style sheets**
-
-```
-// Basic Page
-//
-// [View full page](/basic/)
-//
-// Markup: pages.basic-page.hbs
-//
-// Style guide: pages.basic-page
-
-// NO STYLING IN THIS FILE, USE THE COMPONENTS SECTION
-```
-
-**Handlebars Markup**
-
-```
-<div class="l-content-header content-header">
-  <h1 class="page-title">Basic page title h1 goes here. This is what it looks like when returned.</h1>
-  <h2 class="page-header">Basic page header h2 dolor sit amet nulla sin</h2>
-</div>
-<div class="l-content-sidebar content-sidebar">
-  <article class="l-content l-page-content page-content">
-    {{> components.page-content}}
-  </article>
-  <aside class="l-sidebar sidebar">
-    {{> components.page-sidebar}}
-  </aside>
-</div>
-```
+In order for kss-node to compile your style guide as multiple pages, it needs to have a base index.html file that it can work from. These should be placed in their own folder inside the `styleguide/templates` directory. This repository contains two examples, the **basic** template and the **news** template. These templates will usually look very similar, with the only difference being which partial from `sass/pages` is rendered.
 
 This is where the magic of kss-node and handlebars come together to make page mockups possible with style guides. What we're doing here is starting by defining page specific content, such as the header, and layout classes. Things like the page title, layout, and more could all be unique to this file. 
 
@@ -134,5 +81,3 @@ Another tool you can use is that components can be rendered anywhere, not just i
 
 If you break up your components well, it can make converting these mockups into templates for your CMS of choice very easy. Your back-end developer could take these layout files and replace the `{{> component.name}}` partials with calls to their CMS, such as rendering a sidebar widget area in WordPress in place of `{{> component.page-sidebar}}`
 
-### How to make new style guide pages
-To Do

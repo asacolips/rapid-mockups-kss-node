@@ -52,7 +52,6 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.write('maps'))
     .pipe(eol('\n', true))
     .pipe(gulp.dest('css'))
-    .pipe(gulp.dest('styleguide/dist/theme/css'))
     .pipe(filter('*.css'))
     .pipe(sync.reload({
       stream: true
@@ -68,16 +67,20 @@ gulp.task('javascript', function() {
     .pipe(concat('all.js'))
     .pipe(sourcemaps.write('maps'))
     .pipe(eol('\n', true))
-    .pipe(gulp.dest('js/dist'))
-    .pipe(gulp.dest('styleguide/dist/theme/js/dist'));
+    .pipe(gulp.dest('js/dist'));
 });
 
 //=======================================================
 // Copy assets to styleguide
 //=======================================================
 gulp.task('copy', function() {
-  return gulp.src('assets/fonts/**/*')
-    .pipe(gulp.dest('styleguide/dist/theme/assets/fonts'));
+  return gulp.src([
+    './assets/**/*',
+    './libraries/**/*',
+    './js/**/*',
+    './css/**/*'
+    ], { base: './' })
+    .pipe(gulp.dest('styleguide/dist/theme/'));
 })
 
 //=======================================================
@@ -148,7 +151,7 @@ gulp.task('styleguide-kss', shell.task([
   }
 ));
 
-gulp.task('styleguide', ['styleguide-kss', 'styleguide-all']);
+gulp.task('styleguide', ['styleguide-kss', 'styleguide-all', 'copy']);
 
 //=======================================================
 // Compress assets (images, pngs, svgs).
@@ -166,8 +169,7 @@ gulp.task('compress-png', function () {
       }],
       use: [pngquant()]
     }))
-    .pipe(gulp.dest('assets/dist'))
-    .pipe(gulp.dest('styleguide/dist/theme/assets/dist'));
+    .pipe(gulp.dest('assets/dist'));
 });
 
 gulp.task('compress-jpg', function () {

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Styleguide Style Guide</title>
+    <meta name="description" content="" />
+    <meta name="generator" content="kss-node" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="public/kss.css" />
+    <link rel="stylesheet" href="/theme/css/styleguide.main.css" />
+    <link rel="stylesheet" href="/theme/css/styleguide.print.css" />    <!--[if lt IE 9]>
+    <script src="/theme/js/libraries/html5shiv.js"></script>
+    <![endif]-->  </head>
+  <body id="kss-node" class="no-js">
+    <div class="kss-wrapper">
+      <div class="kss-sidebar">
+        <div class="kss-sidebar-inner">
+          <header class="kss-header">
+            <div class="site-logo">
+              <a href="/" rel="home" class="site-logo__link active">Styleguide</a>
+            </div>          </header>
+          <nav class="kss-nav">
+            <ul class="kss-menu" data-kss-ref="kss-includes">
+              <li class="kss-menu-item"><a href="./index.html"><span class="kss-ref">0</span><span class="kss-name">Overview</span></a></li>
+                <li class="kss-menu-item">
+                  <a href="section-base.html"><span class="kss-ref">1</span><span class="kss-name">Base</span></a>
+                </li>
+                <li class="kss-menu-item">
+                  <a href="section-components.html"><span class="kss-ref">2</span><span class="kss-name">Components</span></a>
+                </li>
+                <li class="kss-menu-item">
+                  <a href="section-documentation.html"><span class="kss-ref">3</span><span class="kss-name">Documentation</span></a>
+                </li>
+                <li class="kss-menu-item">
+                  <a href="section-layouts.html"><span class="kss-ref">5</span><span class="kss-name">Layouts</span></a>
+                </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="kss-content">
+        <article class="kss-article">
+          <section id="section-kss-includes.css" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><a href="#section-kss-includes.css"><span class="kss-ref">4.1</span></a> Includes - CSS</h1>
+            <div class="kss-description">
+              <p>Define css files included in kss-node templates.</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <link rel="stylesheet" href="/theme/css/styleguide.main.css" />
+<link rel="stylesheet" href="/theme/css/styleguide.print.css" />
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;/theme/css/styleguide.main.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/theme/css/styleguide.print.css&quot; /&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-kss-includes.html-footer" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><a href="#section-kss-includes.html-footer"><span class="kss-ref">4.2</span></a> Includes - HTML Footer</h1>
+            <div class="kss-description">
+              <p>Define the footer html, such as the closing body tag
+and js. This should be accompanied by a call to
+<code>{{&gt; kss-includes.html-header.hbs}}</code> to open the
+tags.</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                      <footer class="l-footer">
+      <span class="credits">Copyright © 2015 | Hexoctogon</span>
+    </footer>    </div>
+    <script src="/theme/libraries/jquery-1.9.1.min.js"></script>
+    <script src="/theme/js/dist/all.js"></script>  </body>
+</html>
+
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">    &lt;footer class=&quot;l-footer&quot;&gt;
+      &lt;span class=&quot;credits&quot;&gt;Copyright © 2015 | Hexoctogon&lt;/span&gt;
+    &lt;/footer&gt;    &lt;/div&gt;
+    &lt;script src=&quot;/theme/libraries/jquery-1.9.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;/theme/js/dist/all.js&quot;&gt;&lt;/script&gt;  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-kss-includes.html-header" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><a href="#section-kss-includes.html-header"><span class="kss-ref">4.3</span></a> Includes - HTML Header</h1>
+            <div class="kss-description">
+              <p>Define the header html, such as the html, body, and
+head tags. This should be accompanied by a call to
+<code>{{&gt; kss-includes.html-footer.hbs}}</code> to close the
+tags.</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Basic Page | Styleguide</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/theme/css/styleguide.main.css" />
+    <link rel="stylesheet" href="/theme/css/styleguide.print.css" />    <!--[if lt IE 9]>
+    <script src="/theme/js/libraries/html5shiv.js"></script>
+    <![endif]-->  </head>
+  <body class="no-js">
+    <div class="page-wrapper">
+      <div class="l-header">
+        <div class="site-logo">
+          <a href="/" rel="home" class="site-logo__link active">Styleguide</a>
+        </div>        <div class="menu-toggle"><a href="#" class="js-menu-toggle menu-toggle--button button">Menu</a></div>
+        <nav class="main-navigation js-main-navigation">
+          <ul class="main-navigation__menu menu">
+            <li class="main-navigation__link"><a href="/">Styleguide</a></li>
+            <li class="main-navigation__link"><a href="/basic/">Basic Page</a></li>
+            <li class="main-navigation__link"><a href="/news/">News</a></li>
+          </ul>
+        </nav>      </div>
+
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;
+    &lt;title&gt;Basic Page | Styleguide&lt;/title&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/theme/css/styleguide.main.css&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/theme/css/styleguide.print.css&quot; /&gt;    &lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;/theme/js/libraries/html5shiv.js&quot;&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;  &lt;/head&gt;
+  &lt;body class=&quot;no-js&quot;&gt;
+    &lt;div class=&quot;page-wrapper&quot;&gt;
+      &lt;div class=&quot;l-header&quot;&gt;
+        &lt;div class=&quot;site-logo&quot;&gt;
+          &lt;a href=&quot;/&quot; rel=&quot;home&quot; class=&quot;site-logo__link active&quot;&gt;Styleguide&lt;/a&gt;
+        &lt;/div&gt;        &lt;div class=&quot;menu-toggle&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;js-menu-toggle menu-toggle--button button&quot;&gt;Menu&lt;/a&gt;&lt;/div&gt;
+        &lt;nav class=&quot;main-navigation js-main-navigation&quot;&gt;
+          &lt;ul class=&quot;main-navigation__menu menu&quot;&gt;
+            &lt;li class=&quot;main-navigation__link&quot;&gt;&lt;a href=&quot;/&quot;&gt;Styleguide&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;main-navigation__link&quot;&gt;&lt;a href=&quot;/basic/&quot;&gt;Basic Page&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;main-navigation__link&quot;&gt;&lt;a href=&quot;/news/&quot;&gt;News&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;      &lt;/div&gt;
+</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-kss-includes.html5shiv" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><a href="#section-kss-includes.html5shiv"><span class="kss-ref">4.4</span></a> Includes - HTML5 Shiv</h1>
+            <div class="kss-description">
+              <p>Define an ie9 conditional HTML5 shiv</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <!--[if lt IE 9]>
+<script src="/theme/js/libraries/html5shiv.js"></script>
+<![endif]-->
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;!--[if lt IE 9]&gt;
+&lt;script src=&quot;/theme/js/libraries/html5shiv.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="section-kss-includes.js" class="kss-section kss-depth-2">
+            <h1 class="kss-title"><a href="#section-kss-includes.js"><span class="kss-ref">4.5</span></a> Includes - JS</h1>
+            <div class="kss-description">
+              <p>Define js files included in kss-node templates.</p>
+
+            </div>
+            <div class="kss-modifier-block">
+              <div class="kss-modifier kss-modifier-original">
+                <div class="kss-modifier-example">
+                  <script src="/theme/libraries/jquery-1.9.1.min.js"></script>
+<script src="/theme/js/dist/all.js"></script>
+                </div>
+              </div>
+              <div class="kss-markup">
+                <pre><code data-language="html">&lt;script src=&quot;/theme/libraries/jquery-1.9.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/theme/js/dist/all.js&quot;&gt;&lt;/script&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+        </article>
+        <footer class="kss-footer">
+          <div>Created using <a href="https://github.com/hughsk/kss-node">kss-node</a> and <a href="https://github.com/htanjo/kss-node-template">kss-node-template</a>.</div>
+        </footer>
+      </div>
+    </div>
+    <script src="public/kss.js"></script>
+    <script src="/theme/libraries/jquery-1.9.1.min.js"></script>
+    <script src="/theme/js/dist/all.js"></script>    <!--[if gt IE 8]><!-->
+    <script src="public/rainbow.min.js"></script>
+    <!--<![endif]-->
+    <script src="public/main.js"></script>
+  </body>
+</html>

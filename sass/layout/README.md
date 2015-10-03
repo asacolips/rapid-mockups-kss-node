@@ -1,0 +1,1 @@
+This directory contains your layout partials, eah of which should generally be prefixed with something like `_l-`. Think grid systems and padding and you're on the right track for what should go in here.

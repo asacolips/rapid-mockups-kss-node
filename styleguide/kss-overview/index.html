@@ -8,10 +8,8 @@
     <meta name="generator" content="kss-node" />
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="public/kss.css" />
-    {{> pages.includes-css home_page="true"}}
-    <!--[if lt IE 9]>
-    <script src="public/html5shiv.js"></script>
-    <![endif]-->
+    {{> kss-includes.css}}
+    {{> kss-includes.html5shiv}}
   </head>
   <body id="kss-node" class="no-js">
     <div class="kss-wrapper">
@@ -98,8 +96,7 @@
       </div>
     </div>
     <script src="public/kss.js"></script>
-    <script src="public/jquery-1.9.1.min.js"></script>
-    {{> pages.includes-js home_page="true"}}
+    {{> kss-includes.js}}
     <!--[if gt IE 8]><!-->
     <script src="public/rainbow.min.js"></script>
     <!--<![endif]-->

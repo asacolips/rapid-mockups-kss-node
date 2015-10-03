@@ -1,0 +1,1 @@
+This directory is used for creating includes that will be used in the kss templates. Things like html tags, headers, footers, js, and css should all go here.

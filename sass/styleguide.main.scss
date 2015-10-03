@@ -3,8 +3,6 @@
 // Import variables and mixins
 // Should contain NO css output.
 // Only variables / mixins / settings.
-//
-// Style guide: utilities
 @import 'init-base';
 
 // Base
@@ -30,15 +28,6 @@
 @import 'layout/l-header';
 @import 'layout/l-content-sidebar';
 @import 'layout/l-content-header';
-
-// Pages
-//
-// HTML Page mockups. No styling should be included
-// in these sections, only markup.
-//
-// Style guide: pages
-@import 'pages/basic-page/basic-page';
-@import 'pages/news-page/news-page';
 
 // Components
 //
