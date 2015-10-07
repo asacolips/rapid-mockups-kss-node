@@ -30,10 +30,7 @@
                   <a href="section-components.html"><span class="kss-ref">2</span><span class="kss-name">Components</span></a>
                 </li>
                 <li class="kss-menu-item">
-                  <a href="section-documentation.html"><span class="kss-ref">3</span><span class="kss-name">Documentation</span></a>
-                </li>
-                <li class="kss-menu-item">
-                  <a href="section-layouts.html"><span class="kss-ref">5</span><span class="kss-name">Layouts</span></a>
+                  <a href="section-layouts.html"><span class="kss-ref">4</span><span class="kss-name">Layouts</span></a>
                 </li>
             </ul>
           </nav>
@@ -52,6 +49,99 @@
 </ul>
 <h2 id="view-the-repository">View the repository</h2>
 <p><a href="https://github.com/asacolips/rapid-mockups-kss-node/tree/master/styleguide/dist/basic">https://github.com/asacolips/rapid-mockups-kss-node/tree/master/styleguide/dist/basic</a></p>
+<h1 id="rapid-html-mockups-with-kss-node">Rapid HTML Mockups with kss-node</h1>
+<p>Have you ever needed to get a head start on front-end theme development while you&#39;re still waiting on content types and other back-end work to be finalized? <a href="https://github.com/kss-node/kss-node">kss-node</a> already makes it easy to create a living style guide and use that to speed up development, but you can also leverage the power of kss-node to generate HTML mockup sites that can be developed on the front-end and then handed off to back-end developers later in the project. </p>
+<h2 id="view-the-demo">View the Demo</h2>
+<p>So what exactly do I mean by HTML mockups? Take a look at the <a href="http://asacolips.github.io/rapid-mockups-kss-node">demo</a> to see the compiled style guide. The left sidebar contains the style guide navigation, and the overview links to full page HTML mockups built using kss.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>First, clone or download this repository. The demo is setup using gulp and npm, but the actual command that compiles the style guide is a the normal shell commands for kss-node, so it would be fairly simple to either ignore the gulp file and just work directly with your terminal, or to port the style guide gulp task over to grunt.</p>
+<p>Once the repo has been downloaded, you&#39;ll want to install the npm modules the demo uses. To do this you&#39;ll need node.js (I recommend using <a href="https://github.com/creationix/nvm">Node Version Manager</a>), which includes <a href="https://www.npmjs.com/">NPM</a>. Once those dependencies are in place, cd into the directory where you cloned/downloaded the repository, and then install the npm packages and run <a href="http://gulpjs.com/">gulp</a>.</p>
+<pre><code># install the npm modules
+npm install
+
+# compile the style guide
+npm run gulp styleguide
+
+# compress assets
+npm run gulp compress
+
+# compile sass
+npm run gulp sass
+
+# the default gulp task, runs all three of the above tasks
+npm run gulp
+
+# watch task that also starts a browser-sync server that you can use for testing
+npm run gulp browser-sync
+</code></pre><p>Once you&#39;ve run the <code>browser-sync</code> command, your browser should automatically open up to <a href="http://localhost:3000">http://localhost:3000</a>, and load the demo site there.</p>
+<h2 id="examples">Examples</h2>
+<p>If you look through the <code>sass</code> directory, you can see an example of how the pages are built. The sass is broken up using SMACSS principles, so you&#39;ll find sections for <strong>base</strong>, <strong>components</strong>, <strong>layout</strong>, <strong>kss-includes</strong>, <strong>utils</strong>, and <strong>vendor</strong> code. The two most important sections for our purposes are components and kss-includes.</p>
+<h3 id="sass-components">sass/components</h3>
+<p>The majority of your style guide will be built in the components section of the sass directory. These should use an organizational structure with components divided into folders, and those folders should each contain a stylesheet and a <a href="http://handlebarsjs.com/">Handlebars</a> markup file. For example:</p>
+<pre><code>  __ components
+  |___ site-logo
+    |___ _site-logo.scss
+    |___ components.site-logo.hbs
+  |___ main-navigation
+    |___ _main-navigation.scss
+    |___ components.main-navigation.hbs
+</code></pre><h4 id="style-sheets">Style sheets</h4>
+<p>Your component style sheets serve two purposes. First, they&#39;re where your styles are actually coming from, so you&#39;ll also want to import them in your main stylesheet. See <strong>styleguide.main.scss</strong> for an example of these imports.</p>
+<p>Second, your style sheets define your components so that kss knows about them and how to use them. Each style sheet should have a comment at the top of the file such as:</p>
+<pre><code>// Site Logo
+//
+// The site logo is used to display the site&#39;s title in an accessible link,
+// using background image replacement.
+//
+// Markup: components.site-logo.hbs
+//
+// Style guide: components.site-logo
+</code></pre><p>If you name your component markup files (the <code>.hbs</code> files mentioned earlier) with the same naming scheme as your style guide component, you can then render those components in other handlebars templates. This is described in detail in the <em>How to make new style guide pages</em> section, but a quick example is that the site logo could be rendered inside a different handlebars file by including <code>{{&gt; components.site-logo}}</code> to call it.</p>
+<h4 id="handlebars-markup">Handlebars markup</h4>
+<p>The other major piece of every component is the handlebars markup file. These should be named using the same naming convention as the component, so if you have a file named <code>_site-logo.scss</code> in the <code>components</code> directory, then it should be named <code>components.site-logo.hbs</code>. In addition, your style guide declaration described above should have the same name as the handlebars file, minus the <code>.hbs</code> extension, such as <code>components.site-logo</code>.</p>
+<p>Your handlebars files can have any valid handlebars or HTML markup inside them. In addition, kss-node will treat all HTML it comes across as Handlebars markup, so your file names could instead be written as <code>components.component-name.html</code>. I personally use .hbs as the extension so that syntax highlighting happens automatically in my editor, and to remove any confusion about the syntax the file should be written in.</p>
+<p>Using the site-logo from earlier as an example, here&#39;s what its markup file might look like:</p>
+<pre><code>&lt;div class=&quot;site-logo&quot;&gt;
+  &lt;a href=&quot;/&quot; rel=&quot;home&quot; class=&quot;site-logo__link active&quot;&gt;Styleguide&lt;/a&gt;
+&lt;/div&gt;
+</code></pre><p>Using a markup file is optional. If you have an extremely short piece of markup, it&#39;s convenient to instead just define it in your style sheet&#39;s comment block using something like:</p>
+<pre><code>// Markup: &lt;a href=&quot;#&quot; class=&quot;js-back-to-top back-to-top&quot;&gt;Back to top&lt;/a&gt;
+</code></pre><h3 id="sass-kss-includes">sass/kss-includes</h3>
+<p>In order to make it easier to create new templates, one useful tool is to setup &quot;components&quot; that aren&#39;t intended for the theme itself, but instead include re-usable markup for the template files. For example, in the <code>sass/kss-includes</code> directory, there are 5 include components: css, js, html-footer, html-header, and html5shiv.</p>
+<p>The demo is setup so that css files and js files can be defined and included in the the respective kss-includes markup. In addition, the html5shiv is used to conditionally load an html5 shiv for IE.</p>
+<p>The html-header markup starts up the page with opening <code>&lt;html&gt;</code> and <code>&lt;body&gt;</code> tags, along with common settings such as meta tags and css includes. In addition, the <code>site-logo</code> and <code>main-navigation</code> components from the demo are rendered here, since they&#39;re common to all of the demo pages.</p>
+<p>The html-footer markup is fairly simply, and primarily conists of closing out already opened tags and loading javascript files from the previous js markup.</p>
+<h3 id="how-to-make-new-style-guide-pages">How to make new style guide pages</h3>
+<p>In order for kss-node to compile your style guide as multiple pages, it needs to have a base index.html file that it can work from. These should be placed in their own folder inside the <code>styleguide/templates</code> directory. This repository contains two examples, the <strong>basic</strong> template and the <strong>news</strong> template. In addition, the template for the actual style guide overview page that kss-node is known for is in its own template directory, <code>styleguide/kss-overview</code>.</p>
+<p>To create a new template, make a new directory in the templates directory, and create an index.html file inside that contains the following lines:</p>
+<pre><code>{{&gt; kss-includes.html-header title=&quot;Basic Page&quot;}}
+
+{{!-- START CUSTOM PAGE CONTENT --}}
+
+{{!-- END CUSTOM PAGE CONTENT --}}
+
+{{&gt; kss-includes.html-footer}}
+</code></pre><p>Because these are just normal HTML files that allow you to import the components defined earlier, you could also start from your own HTML boilerplate and add components in wherever it makes sense for your project. To make things easier, however, I&#39;ve set up a <code>kss-includes</code> section in the sass directory where you can define template parts common to your various pages, such as the header, footer, and any css/js/conditional includes.</p>
+<p>So, using the above code, this is what the Basic Page template in the demo looks like:</p>
+<pre><code>{{&gt; kss-includes.html-header title=&quot;Basic Page&quot;}}
+
+{{!-- START CUSTOM PAGE CONTENT --}}
+&lt;div class=&quot;l-content-header content-header&quot;&gt;
+  &lt;h1 class=&quot;page-title&quot;&gt;Basic page title h1 goes here. This is what it looks like when returned.&lt;/h1&gt;
+  &lt;h2 class=&quot;page-header&quot;&gt;Basic page header h2 dolor sit amet nulla sin&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class=&quot;l-content-sidebar content-sidebar&quot;&gt;
+  &lt;article class=&quot;l-content l-page-content page-content&quot;&gt;
+    {{&gt; components.page-content}}
+  &lt;/article&gt;
+  &lt;aside class=&quot;l-sidebar sidebar&quot;&gt;
+    {{&gt; components.page-sidebar}}
+  &lt;/aside&gt;
+&lt;/div&gt;
+{{!-- END CUSTOM PAGE CONTENT --}}
+
+{{&gt; kss-includes.html-footer}}
+</code></pre><p>In the Basic Page template we&#39;re including the predefined header with title variable set to <em>Basic Page</em>. After that we&#39;re defining some custom layout HTML, and rendering the <code>components.page-content</code> and <code>components.page-sidebar</code> components that are defined in the demo&#39;s <code>sass/components</code> directory.</p>
 
           </section>
         </article>

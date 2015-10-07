@@ -203,9 +203,6 @@ gulp.task('browser-sync', function() {
 // Default Task
 //=======================================================
 
-// Production gulp task
-//gulp.task('default', ['sass', 'styleguide', 'compress', 'icons']);
-
-// HTML Mockups gulp task
-gulp.task('default', ['sass', 'javascript']);
+// Demo gulp task
+gulp.task('default', ['sass', 'javascript', 'compress', 'styleguide', 'copy']);
 

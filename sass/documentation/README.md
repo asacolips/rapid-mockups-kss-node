@@ -1,1 +1,0 @@
-Well... this is a *style guide* after all. If you have something that should be documented for your creative or content teams, this is the place to do it. Feel free to load it up with kss node comments that are basically glorified markdown files.
