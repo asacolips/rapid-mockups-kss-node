@@ -1,8 +1,8 @@
 {
-  "name": "travelport",
+  "name": "rapid-mockups-kss-node",
   "version": "1.0.0",
   "scripts": {
-    "install": "echo 'https://www.drupal.org/node/2393605' > node_modules/.scanignore",
+    "install": "",
     "gulp": "gulp",
     "gulp-watch": "gulp watch",
     "gulp-styleguide": "gulp styleguide",
