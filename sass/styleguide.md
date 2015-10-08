@@ -8,7 +8,7 @@ This application is a living style guide, generated from KSS documented styles.
 - [News Page](/news)
 
 ## View the repository
-https://github.com/asacolips/rapid-mockups-kss-node/tree/master/styleguide/dist/basic
+https://github.com/asacolips/rapid-mockups-kss-node
 
 # Rapid HTML Mockups with kss-node
 
