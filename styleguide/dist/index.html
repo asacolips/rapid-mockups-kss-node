@@ -142,6 +142,19 @@ npm run gulp browser-sync
 
 {{&gt; kss-includes.html-footer}}
 </code></pre><p>In the Basic Page template we&#39;re including the predefined header with title variable set to <em>Basic Page</em>. After that we&#39;re defining some custom layout HTML, and rendering the <code>components.page-content</code> and <code>components.page-sidebar</code> components that are defined in the demo&#39;s <code>sass/components</code> directory.</p>
+<h2 id="wrapping-it-all-up">Wrapping it all up</h2>
+<p>In summary:</p>
+<ul>
+<li>setup components and kss-includes in your <strong>sass/</strong> directory</li>
+<li>your components should include a <strong>.scss</strong> partial with comment defining it for kss-node, and Handlebars markup file with a matching name</li>
+<li>setup new templates in your <strong>styleguide/templates/</strong> directory that include an index.html file</li>
+<li>render and re-use the markup defined in your components by calling them with <code>{{&gt; components.component-name}}</code> name. Variables can be passed into your component such as with <code>{{&gt; components.component-name modifier_class=&quot;class--modifier&quot;}}</code></li>
+<li>compile your styleguide and sass using Gulp, Grunt, or directly with shell commands for kss-node.</li>
+<li>test your styleguide using Browser Sync, which uses the <strong>styleguide/dist/</strong> as its root directory</li>
+</ul>
+<h2 id="what-to-do-when-your-style-guide-gets-huge">What to do when your style guide gets huge</h2>
+<p>When you&#39;re starting to get near the finish line on your project, you&#39;ll probably start running into lengthy compile times for your style guide. Once you&#39;ve got 30+ components and 10 different pages, it can often take 10-30 seconds to compile all of the pages. One method to speed this up is to only compile the templates you need while you&#39;re working, and then compile everything else after you&#39;ve finished and prior to committing the code.</p>
+<p>The include gulp taskfile includes an argument for the kss-node process that allows you to specify a specific template directory. For instance, if you wanted to compile the <strong>styleguide/templates/basic/</strong> template, you would use <code>npm run gulp styleguide-all --template=&#39;basic&#39;</code></p>
 
           </section>
         </article>

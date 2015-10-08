@@ -154,3 +154,20 @@ So, using the above code, this is what the Basic Page template in the demo looks
 ```
 
 In the Basic Page template we're including the predefined header with title variable set to *Basic Page*. After that we're defining some custom layout HTML, and rendering the `components.page-content` and `components.page-sidebar` components that are defined in the demo's `sass/components` directory.
+
+## Wrapping it all up
+
+In summary:
+
+- setup components and kss-includes in your **sass/** directory
+- your components should include a **.scss** partial with comment defining it for kss-node, and Handlebars markup file with a matching name
+- setup new templates in your **styleguide/templates/** directory that include an index.html file
+- render and re-use the markup defined in your components by calling them with `{{> components.component-name}}` name. Variables can be passed into your component such as with `{{> components.component-name modifier_class="class--modifier"}}`
+- compile your styleguide and sass using Gulp, Grunt, or directly with shell commands for kss-node.
+- test your styleguide using Browser Sync, which uses the **styleguide/dist/** as its root directory
+
+## What to do when your style guide gets huge
+
+When you're starting to get near the finish line on your project, you'll probably start running into lengthy compile times for your style guide. Once you've got 30+ components and 10 different pages, it can often take 10-30 seconds to compile all of the pages. One method to speed this up is to only compile the templates you need while you're working, and then compile everything else after you've finished and prior to committing the code.
+
+The include gulp taskfile includes an argument for the kss-node process that allows you to specify a specific template directory. For instance, if you wanted to compile the **styleguide/templates/basic/** template, you would use `npm run gulp styleguide-all --template='basic'`
