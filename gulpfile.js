@@ -81,7 +81,7 @@ gulp.task('copy', function() {
     './css/**/*'
     ], { base: './' })
     .pipe(gulp.dest('styleguide/dist/theme/'));
-})
+});
 
 //=======================================================
 // Watch and recompile sass.
@@ -106,7 +106,7 @@ gulp.task('styleguide-all', function() {
   var templateName;
 
   // Accept argument variables to compile specific styleguides
-  // For example, `npm run gulp styleguide-all --template='segment-landing'
+  // For example, `npm run gulp styleguide-all --template='basic'
   if (argv.template) {
     templateName = 'styleguide/templates/' + argv.template + '/index.html';
   }
@@ -204,5 +204,5 @@ gulp.task('browser-sync', function() {
 //=======================================================
 
 // Demo gulp task
-gulp.task('default', ['sass', 'javascript', 'compress', 'styleguide', 'copy']);
+gulp.task('default', ['sass', 'javascript', 'compress', 'styleguide']);
 

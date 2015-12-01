@@ -21,8 +21,7 @@ html {
 
 * {
   box-sizing: inherit; }
-  *:before,
-  *:after {
+  *:before, *:after {
     box-sizing: inherit; }
 
 body {
@@ -106,18 +105,11 @@ a {
   color: #58c5c7;
   text-decoration: none;
   transition: color 0.3s ease; }
-  a:hover,
-  a:focus,
-  a.focus,
-  a.active,
-  a:active {
+  a:hover, a:focus, a.focus, a.active, a:active {
     color: #5c76a0;
     outline: 0; }
 
-article a:focus,
-article a.focus,
-article a.active,
-article a:active,
+article a:focus, article a.focus, article a.active, article a:active,
 aside a:focus,
 aside a.focus,
 aside a.active,
@@ -300,7 +292,8 @@ select {
  *    Known issue: inner spacing remains in IE 6.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -367,8 +360,7 @@ input[type="search"] {
    * Safari (but not Chrome) clips the cancel button when the search input has
    * padding (and `textfield` appearance).
    */ }
-  input[type="search"]::-webkit-search-cancel-button,
-  input[type="search"]::-webkit-search-decoration {
+  input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
     -webkit-appearance: none; }
 
 /**
@@ -446,9 +438,7 @@ input[type="submit"],
   font-weight: 300;
   font-size: 1.6rem;
   border: none; }
-  button:hover,
-  button:focus,
-  button:active,
+  button:hover, button:focus, button:active,
   input[type="button"]:hover,
   input[type="button"]:focus,
   input[type="button"]:active,
@@ -463,9 +453,7 @@ input[type="submit"],
 
 .button--border {
   border: 2px solid #ffffff; }
-  .button--border:hover,
-  .button--border:focus,
-  .button--border:active {
+  .button--border:hover, .button--border:focus, .button--border:active {
     border: 2px solid #ffffff; }
 
 .kss-article,
@@ -476,13 +464,15 @@ input[type="submit"],
   font-weight: inherit; }
 
 .l-center,
-.l-header, .l-content-header {
+.l-header,
+.l-content-header {
   padding: 0 2rem;
   /* Tablet and up padding. Mobile padding is on
    * individual sections (ex: branding, footer)
    */ }
   .l-center:after,
-  .l-header:after, .l-content-header:after {
+  .l-header:after,
+  .l-content-header:after {
     content: '';
     display: table;
     clear: both; }
@@ -572,9 +562,7 @@ input[type="submit"],
   background-repeat: no-repeat;
   display: block;
   max-width: 100%; }
-  .site-logo__link:focus,
-  .site-logo__link:active,
-  .site-logo__link.active {
+  .site-logo__link:focus, .site-logo__link:active, .site-logo__link.active {
     border-bottom: none; }
 
 .main-navigation {
@@ -624,8 +612,7 @@ input[type="submit"],
     .main-navigation__link a:hover {
       background-color: #5c76a0;
       color: #ffffff; }
-    .main-navigation__link a:focus,
-    .main-navigation__link a:active {
+    .main-navigation__link a:focus, .main-navigation__link a:active {
       border-color: #5c76a0;
       background-color: #5c76a0;
       color: #ffffff; }
@@ -662,10 +649,7 @@ input[type="submit"],
   overflow: hidden;
   white-space: nowrap;
   /* hamburger icon, border method */ }
-  .menu-toggle--button:link,
-  .menu-toggle--button:active,
-  .menu-toggle--button:focus,
-  .menu-toggle--button:hover {
+  .menu-toggle--button:link, .menu-toggle--button:active, .menu-toggle--button:focus, .menu-toggle--button:hover {
     border: none;
     background: none; }
   .menu-toggle--button:before {
