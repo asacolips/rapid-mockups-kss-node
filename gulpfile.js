@@ -106,7 +106,7 @@ gulp.task('styleguide-all', function() {
   var templateName;
 
   // Accept argument variables to compile specific styleguides
-  // For example, `npm run styleguide --template='segment-landing'
+  // For example, `npm run gulp styleguide-all --template='segment-landing'
   if (argv.template) {
     templateName = 'styleguide/templates/' + argv.template + '/index.html';
   }
